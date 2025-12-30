@@ -1,0 +1,9 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\bonyi\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DIDF_TARGET=esp32s3 -DCCACHE_ENABLE=0 C:\Proyecto_Flutter\texel_iot_project\firmware_equipo\wifi_prov_mgr
+fatal: detected dubious ownership in repository at 'C:/Users/bonyi/esp/v5.5.1/esp-idf'
+'C:/Users/bonyi/esp/v5.5.1/esp-idf' is owned by:
+	'S-1-5-32-544'
+but the current user is:
+	'S-1-5-21-3254328368-1369199498-3868449593-1001'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory C:/Users/bonyi/esp/v5.5.1/esp-idf

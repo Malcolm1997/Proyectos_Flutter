@@ -1,0 +1,7 @@
+source "C:/Users/bonyi/esp/v5.5.1/esp-idf/components/bootloader/Kconfig.projbuild"
+source "C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_app_format/Kconfig.projbuild"
+source "C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/Kconfig.projbuild"
+source "C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "C:/Users/bonyi/esp/v5.5.1/esp-idf/components/partition_table/Kconfig.projbuild"
+source "C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/main/Kconfig.projbuild"
+source "C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/managed_components/espressif__esp-sr/Kconfig.projbuild"

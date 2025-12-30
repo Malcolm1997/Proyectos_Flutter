@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/CMakeFiles/bootloader
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/CMakeFiles/bootloader.rule
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/CMakeFiles/bootloader-complete.rule
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

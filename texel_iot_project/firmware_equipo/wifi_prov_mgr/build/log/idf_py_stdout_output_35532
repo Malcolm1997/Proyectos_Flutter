@@ -1,0 +1,63 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\bonyi\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DIDF_TARGET=esp32s3 -DCCACHE_ENABLE=0 C:\Proyecto_Flutter\texel_iot_project\firmware_equipo\wifi_prov_mgr
+-- Existing sdkconfig 'C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/sdkconfig' renamed to 'C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/sdkconfig.old'.
+-- Found Git: C:/Users/bonyi/.espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1")
+-- git rev-parse returned 'fatal: detected dubious ownership in repository at 'C:/Users/bonyi/esp/v5.5.1/esp-idf'
+'C:/Users/bonyi/esp/v5.5.1/esp-idf' is owned by:
+	'S-1-5-32-544'
+but the current user is:
+	'S-1-5-21-3254328368-1369199498-3868449593-1001'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory C:/Users/bonyi/esp/v5.5.1/esp-idf'
+-- Minimal build - ON
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/bonyi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Users/bonyi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Users/bonyi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Updating lock file at C:\Proyecto_Flutter\texel_iot_project\firmware_equipo\wifi_prov_mgr\dependencies.lock
+NOTICE: Processing 2 dependencies:
+NOTICE: [1/2] espressif/qrcode (0.1.0~2)
+NOTICE: [2/2] idf (5.5.1)
+-- Project sdkconfig file C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/sdkconfig
+Loading defaults file C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/sdkconfig.defaults...
+warning: unknown kconfig symbol 'BTDM_CTRL_MODE_BLE_ONLY' assigned to 'y' in C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/sdkconfig.defaults
+warning: unknown kconfig symbol 'BTDM_CTRL_MODE_BR_EDR_ONLY' assigned to 'n' in C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/sdkconfig.defaults
+warning: unknown kconfig symbol 'BTDM_CTRL_MODE_BTDM' assigned to 'n' in C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/sdkconfig.defaults
+-- Compiler supported targets: xtensa-esp-elf
+-- Found Python3: C:/Users/bonyi/.espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- USING O3
+-- App "wifi_prov_mgr" version: 67352f0-dirty
+-- Adding linker script C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_cca.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script C:/Users/bonyi/esp/v5.5.1/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_update bootloader bootloader_support bt console cxx efuse esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_gpio esp_driver_spi esp_driver_uart esp_driver_usb_serial_jtag esp_event esp_gdbstub esp_http_server esp_hw_support esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_ringbuf esp_rom esp_security esp_system esp_timer esp_vfs_console esp_wifi espressif__qrcode esptool_py freertos hal heap http_parser json log lwip main mbedtls newlib nvs_flash partition_table protobuf-c protocomm pthread soc spi_flash vfs wifi_provisioning wpa_supplicant xtensa
+-- Component paths: C:/Users/bonyi/esp/v5.5.1/esp-idf/components/app_update C:/Users/bonyi/esp/v5.5.1/esp-idf/components/bootloader C:/Users/bonyi/esp/v5.5.1/esp-idf/components/bootloader_support C:/Users/bonyi/esp/v5.5.1/esp-idf/components/bt C:/Users/bonyi/esp/v5.5.1/esp-idf/components/console C:/Users/bonyi/esp/v5.5.1/esp-idf/components/cxx C:/Users/bonyi/esp/v5.5.1/esp-idf/components/efuse C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_app_format C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_bootloader_format C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_coex C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_common C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_driver_gpio C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_driver_spi C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_driver_uart C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_driver_usb_serial_jtag C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_event C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_gdbstub C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_http_server C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_hw_support C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_mm C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_netif C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_netif_stack C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_partition C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_phy C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_pm C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_ringbuf C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_rom C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_security C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_system C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_timer C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_vfs_console C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esp_wifi C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/managed_components/espressif__qrcode C:/Users/bonyi/esp/v5.5.1/esp-idf/components/esptool_py C:/Users/bonyi/esp/v5.5.1/esp-idf/components/freertos C:/Users/bonyi/esp/v5.5.1/esp-idf/components/hal C:/Users/bonyi/esp/v5.5.1/esp-idf/components/heap C:/Users/bonyi/esp/v5.5.1/esp-idf/components/http_parser C:/Users/bonyi/esp/v5.5.1/esp-idf/components/json C:/Users/bonyi/esp/v5.5.1/esp-idf/components/log C:/Users/bonyi/esp/v5.5.1/esp-idf/components/lwip C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/main C:/Users/bonyi/esp/v5.5.1/esp-idf/components/mbedtls C:/Users/bonyi/esp/v5.5.1/esp-idf/components/newlib C:/Users/bonyi/esp/v5.5.1/esp-idf/components/nvs_flash C:/Users/bonyi/esp/v5.5.1/esp-idf/components/partition_table C:/Users/bonyi/esp/v5.5.1/esp-idf/components/protobuf-c C:/Users/bonyi/esp/v5.5.1/esp-idf/components/protocomm C:/Users/bonyi/esp/v5.5.1/esp-idf/components/pthread C:/Users/bonyi/esp/v5.5.1/esp-idf/components/soc C:/Users/bonyi/esp/v5.5.1/esp-idf/components/spi_flash C:/Users/bonyi/esp/v5.5.1/esp-idf/components/vfs C:/Users/bonyi/esp/v5.5.1/esp-idf/components/wifi_provisioning C:/Users/bonyi/esp/v5.5.1/esp-idf/components/wpa_supplicant C:/Users/bonyi/esp/v5.5.1/esp-idf/components/xtensa
+-- Configuring done (6.2s)
+-- Generating done (0.8s)
+-- Build files have been written to: C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/wifi_prov_mgr/build
