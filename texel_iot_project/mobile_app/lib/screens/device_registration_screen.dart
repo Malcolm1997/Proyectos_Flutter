@@ -1,5 +1,8 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app/repositories/device_repositories.dart';
+import 'package:mobile_app/services/mqtt_service.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import '../models/medical_device.dart';
 
@@ -15,40 +18,35 @@ class _DeviceRegistrationScreenState extends State<DeviceRegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
   final _modelController = TextEditingController();
   final _serialController = TextEditingController();
+  final _keyController = TextEditingController();
 
-  // Dependencia del repositorio (Idealmente inyectar con Provider/GetIt)
   final IDeviceRepository _repository = LocalDeviceRepository();
 
   bool _isLoading = false;
 
-  // --- Lógica de Parseo QR ---
   void _processQR(String rawData) {
-    // Formato esperado: "MODELO[espacio]SERIE"
-    // ADVERTENCIA: Este formato es frágil. Si el modelo tiene espacios, fallará.
-    if (!rawData.contains(' ')) {
-      _showSnack(
-        'Formato QR inválido. Se requiere espacio separador.',
-        isError: true,
-      );
-      return;
-    }
-
     try {
-      final parts = rawData.split(' ');
-      // Asumimos: Primer elemento es Modelo, resto es Serie
-      final model = parts[0];
-      final serial = parts
-          .sublist(1)
-          .join(' '); // Une el resto por si el serial tiene espacios
+      final Map<String, dynamic> data = jsonDecode(rawData);
+
+      final model = data['m']?.toString();
+      final serial = data['s']?.toString();
+      // Guardamos la clave si existe, aunque no se muestre
+      final key = data['k']?.toString();
+
+      if (model == null || serial == null) {
+        _showSnack('QR inválido: Faltan datos (m/s)', isError: true);
+        return;
+      }
 
       setState(() {
         _modelController.text = model.toUpperCase().trim();
         _serialController.text = serial.toUpperCase().trim();
+        _keyController.text = key ?? '';
       });
 
       _showSnack('Datos importados del QR correctamente');
     } catch (e) {
-      _showSnack('Error al leer QR: $e', isError: true);
+      _showSnack('Error al leer QR: NO es un JSON válido ($e)', isError: true);
     }
   }
 
@@ -61,16 +59,48 @@ class _DeviceRegistrationScreenState extends State<DeviceRegistrationScreen> {
     // Ocultar teclado
     FocusScope.of(context).unfocus();
 
+    // 1. Validar Credenciales via MQTT
+    final model = _modelController.text.trim();
+    final serial = _serialController.text.trim();
+    final key = _keyController.text.trim();
+
+    // Tópico de validación: texel/MODEL/SERIAL/KEY/existo
+    // Esperamos que el valor sea "true"
+    final validationTopic = "texel/$model/$serial/$key/existo";
+
+    _showSnack("Verificando credenciales con el equipo...", isError: false);
+
+    // Asegurar conexión antes de chequear
+    final mqtt = MqttService();
+    if (!mqtt.isConnected) await mqtt.initializeAndConnect();
+
+    final isValid = await mqtt.checkTopicValue(validationTopic, "true");
+
+    if (!isValid) {
+      if (mounted) {
+        _showSnack(
+          "Error: No se pudo verificar el equipo. Revise que esté encendido y los datos sean correctos.",
+          isError: true,
+        );
+        setState(() => _isLoading = false);
+      }
+      return;
+    }
+
     final device = MedicalDevice(
-      model: _modelController.text.trim(),
-      serialNumber: _serialController.text.trim(),
+      model: model,
+      serialNumber: serial,
+      accessKey: key,
     );
 
     try {
       await _repository.saveDevice(device);
       if (!mounted) return;
       _showSnack('Equipo ${device.model} vinculado exitosamente');
-      // Aquí navegarías al Dashboard o pantalla de Control BLE
+
+      // Esperamos brevísima para que el snackbar se vea
+      await Future.delayed(const Duration(milliseconds: 500));
+      if (mounted) context.push('/home');
     } catch (e) {
       _showSnack('Error de persistencia: $e', isError: true);
     } finally {
@@ -178,7 +208,14 @@ class _DeviceRegistrationScreenState extends State<DeviceRegistrationScreen> {
                 _serialController,
                 'Número de Serie',
                 Icons.fingerprint,
-                'Ej: 111022',
+                'Ej: 111-022',
+              ),
+              const SizedBox(height: 16),
+              _buildInput(
+                _keyController,
+                'Clave de Acceso',
+                Icons.vpn_key,
+                'Ej: A9zL2',
               ),
 
               const SizedBox(height: 32),

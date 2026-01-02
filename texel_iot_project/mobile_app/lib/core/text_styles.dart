@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,6 +26,5 @@ class TextStyles {
     fontSize: 14,
     color: Colors.black,
     fontFamily: GoogleFonts.sourceSans3().fontFamily,
-    );
-
+  );
 }

@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "smart-panel",
-    "project_version":    "67352f0-dirty",
+    "project_version":    "df9c59f-dirty",
     "project_path":       "C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel",
     "idf_path":           "C:/Users/bonyi/esp/v5.5.1/esp-idf",
     "build_dir":          "C:/Proyecto_Flutter/texel_iot_project/firmware_equipo/smart_panel/build",
